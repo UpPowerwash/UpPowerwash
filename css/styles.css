@@ -234,3 +234,32 @@ body {
 
 .before-after-pair .before { background: linear-gradient(135deg, #888, #555); }
 .before-after-pair .after { background: linear-gradient(135deg, var(--up-lime), #9fce00); color: var(--up-dark); }
+
+#werkwijze { padding: 80px 24px; }
+#werkwijze h2 { text-align: center; font-size: 2rem; margin-bottom: 48px; }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.step-card { text-align: center; }
+
+.step-card .step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--up-lime);
+  color: var(--up-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin: 0 auto 16px;
+}
+
+.step-card h3 { margin-bottom: 8px; font-size: 1.1rem; }
+.step-card p { color: #555; font-size: 0.95rem; }
