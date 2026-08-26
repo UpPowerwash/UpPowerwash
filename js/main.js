@@ -28,7 +28,48 @@ function initSmoothScroll() {
   });
 }
 
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  if (!form || !status) return;
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    status.textContent = '';
+    status.className = '';
+
+    const email = form.querySelector('#email').value;
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!form.checkValidity() || !emailValid) {
+      status.textContent = 'Vul alle verplichte velden correct in.';
+      status.className = 'error';
+      return;
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        status.textContent = 'Bedankt! We nemen zo snel mogelijk contact met je op.';
+        status.className = 'success';
+        form.reset();
+      } else {
+        status.textContent = 'Er ging iets mis bij het versturen. Probeer het later opnieuw.';
+        status.className = 'error';
+      }
+    } catch (err) {
+      status.textContent = 'Er ging iets mis bij het versturen. Probeer het later opnieuw.';
+      status.className = 'error';
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initSmoothScroll();
+  initContactForm();
 });
