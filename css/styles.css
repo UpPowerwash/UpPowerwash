@@ -156,3 +156,37 @@ body {
   margin: 0 auto 32px;
   color: #ddd;
 }
+
+#diensten {
+  padding: 80px 24px;
+}
+
+#diensten h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 48px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.service-card {
+  background: var(--up-white);
+  border-radius: var(--up-radius);
+  box-shadow: var(--up-shadow);
+  padding: 32px;
+  text-align: center;
+}
+
+.service-card .icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  color: var(--up-dark);
+}
+
+.service-card h3 { margin-bottom: 12px; font-size: 1.2rem; }
+.service-card p { color: #555; font-size: 0.95rem; }
