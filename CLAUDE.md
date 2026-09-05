@@ -19,9 +19,10 @@ Three independent init functions wired on `DOMContentLoaded`:
 - `initContactForm` — submits the contact form via `fetch` to a Formspree endpoint, shows inline success/error status
 
 ## Known placeholders (not yet filled in with real data)
-- Contact section: WhatsApp/phone/email in `index.html` are placeholder numbers (`+32 495 00 00 00`) — search for `PLACEHOLDER:` comments
 - Contact form `action` points to a placeholder Formspree URL (`https://formspree.io/f/XXXXXXXX`)
 - "Voor & Na" (before/after) and "Reviews" sections use placeholder content — real photos/reviews are pending
+
+Real contact info now in place: phone/WhatsApp `+32 473 26 95 14`, email `info@uppowerwash.be`.
 
 ## Conventions
 - All visible copy is Dutch
