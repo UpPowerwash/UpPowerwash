@@ -41,6 +41,8 @@ Stays working as long as: the repo stays public, the Combell domain registration
 ## Mascot
 `assets/mascotte-*.png` are cropped/cutout from a 4x3 sprite sheet the client supplied, background made transparent. Currently used: `mascotte-hogedruk` (hero), `mascotte-schild` (waarom section), `mascotte-piepen` (footer, decorative/`aria-hidden`).
 
+`mascotte-schild` and `mascotte-piepen` are used on dark sections, but their prop (the shield / the wall) was originally drawn solid black — invisible against a dark background. Fixed by recoloring just that shape to white (found via connected-component analysis: it's the one ~9500px blob, an order of magnitude bigger than the ~400-900px blobs that are the eyes/droplets, which stayed black). If more poses from the sprite sheet get used later on a dark section, check for the same issue.
+
 ## Conventions
 - All visible copy is Dutch
 - No JS framework/build tooling — edits to `js/main.js`/`css/styles.css` take effect directly on page load
