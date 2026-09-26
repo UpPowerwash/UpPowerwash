@@ -320,7 +320,13 @@ body {
 
 #waarom h2 { text-align: center; font-size: 2rem; margin: 0; }
 
-.waarom-mascot { width: 64px; height: auto; }
+.waarom-mascot {
+  width: 76px;
+  height: auto;
+  padding: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(204, 255, 2, 0.3) 0%, rgba(204, 255, 2, 0) 72%);
+}
 
 @media (max-width: 480px) {
   .waarom-header { flex-direction: column; gap: 8px; }
