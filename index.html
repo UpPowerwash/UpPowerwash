@@ -147,8 +147,10 @@
           <a class="btn btn-primary" href="mailto:info@uppowerwash.be">info@uppowerwash.be</a>
           <p style="margin-top: 8px; color: #555;">Actief in heel Limburg.</p>
         </div>
-        <!-- PLACEHOLDER: vervang door echte Formspree form-URL -->
-        <form id="contact-form" action="https://formspree.io/f/XXXXXXXX" method="POST">
+        <form id="contact-form" action="https://formsubmit.co/info@uppowerwash.be" method="POST">
+          <input type="hidden" name="_subject" value="Nieuwe offerteaanvraag via de website">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
           <div>
             <label for="naam">Naam</label>
             <input type="text" id="naam" name="naam" required>

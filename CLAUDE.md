@@ -17,11 +17,13 @@ Single-page static marketing site for "Under Pressure Power Washing" (pressure w
 Three independent init functions wired on `DOMContentLoaded`:
 - `initMobileNav` — hamburger menu toggle
 - `initSmoothScroll` — smooth-scroll for in-page anchor links
-- `initContactForm` — submits the contact form via `fetch` to a Formspree endpoint, shows inline success/error status
+- `initContactForm` — submits the contact form via `fetch` to a FormSubmit.co endpoint, shows inline success/error status
 
 ## Known placeholders (not yet filled in with real data)
-- Contact form `action` points to a placeholder Formspree URL (`https://formspree.io/f/XXXXXXXX`)
 - "Reviews" section still uses placeholder quotes — real reviews are pending
+
+## Contact form
+`action="https://formsubmit.co/info@uppowerwash.be"` — no account/API key needed, FormSubmit forwards submissions by email. Requires a one-time activation click in a confirmation email FormSubmit sends to that inbox after the first-ever submission; until activated, submissions may not be delivered even though the client-side `fetch` gets a 200. A hidden `_honeypot` field is spam protection; `_subject`/`_template` set the forwarded email's subject and layout.
 - "Voor & Na" has one real photo (`assets/project-voor-na-1.jpg`); more can be added the same way (`.project-photo` inside `.before-after-grid`)
 
 Real contact info in place: phone/WhatsApp `+32 456 94 17 81`, email `info@uppowerwash.be`.

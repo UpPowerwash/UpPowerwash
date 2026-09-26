@@ -322,6 +322,10 @@ body {
 
 .waarom-mascot { width: 64px; height: auto; }
 
+@media (max-width: 480px) {
+  .waarom-header { flex-direction: column; gap: 8px; }
+}
+
 .values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
