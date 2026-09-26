@@ -11,7 +11,7 @@ Single-page static marketing site for "Under Pressure Power Washing" (pressure w
 - `CNAME` at repo root — GitHub Pages custom domain (`uppowerwash.be`), DNS managed at Combell
 
 ## Structure (index.html sections, in order)
-`#hero` → `#diensten` (services) → `#projecten` (before/after) → `#werkwijze` (how it works) → `#waarom` (why us) → `#reviews` → `#contact`
+`#hero` → `#diensten` (services) → `#projecten` (before/after) → `#werkwijze` (how it works) → `#waarom` (why us) → `#contact`
 
 ## js/main.js
 Three independent init functions wired on `DOMContentLoaded`:
@@ -20,7 +20,7 @@ Three independent init functions wired on `DOMContentLoaded`:
 - `initContactForm` — submits the contact form via `fetch` to a FormSubmit.co endpoint, shows inline success/error status
 
 ## Known placeholders (not yet filled in with real data)
-- "Reviews" section still uses placeholder quotes — real reviews are pending
+- "Reviews" section was removed (was showing made-up example quotes, which isn't something to publish as real). CSS for it (`#reviews`, `.reviews-grid`, `.review-card`) is still in `css/styles.css` for reuse — re-add the `<section id="reviews">` block once there are genuine client reviews to show.
 
 ## Contact form
 `action="https://formsubmit.co/info@uppowerwash.be"` — no account/API key needed, FormSubmit forwards submissions by email. Requires a one-time activation click in a confirmation email FormSubmit sends to that inbox after the first-ever submission; until activated, submissions may not be delivered even though the client-side `fetch` gets a 200. A hidden `_honeypot` field is spam protection; `_subject`/`_template` set the forwarded email's subject and layout.
