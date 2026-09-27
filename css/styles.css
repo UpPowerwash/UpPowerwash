@@ -192,13 +192,14 @@ body {
   width: 260px;
   height: auto;
   flex-shrink: 0;
+  order: -1; /* mascot left of the text, spraying rightward toward it */
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
 }
 
 @media (max-width: 860px) {
   .hero-inner { flex-direction: column; text-align: center; }
   .hero-text { max-width: 100%; }
-  .hero-mascot { width: 180px; }
+  .hero-mascot { width: 180px; order: 0; /* stacked: text first, mascot below */ }
 }
 
 #diensten {
