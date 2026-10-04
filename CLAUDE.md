@@ -38,6 +38,12 @@ Hosted on **GitHub Pages**, free because this repo is public (private repos need
 
 Stays working as long as: the repo stays public, the Combell domain registration keeps getting renewed, and nobody changes the DNS records above. No recurring cost beyond the yearly domain renewal at Combell.
 
+## SEO
+- People search for the brand as "UpPowerwash" (domain, email, Instagram `@up.powerwash`), but the visible business name is "Under Pressure Power Washing" — so `<title>`, meta description, footer and the JSON-LD `alternateName` all carry "UpPowerwash" too. Keep both names in sync if either changes.
+- `<head>` of `index.html` has a canonical URL, Open Graph tags (preview image = `project-voor-na-1.jpg`) and a `LocalBusiness` JSON-LD block (phone, email, area served, Instagram). No street address on purpose — it's a service-area business; only add one if the owner wants it public.
+- `robots.txt` + `sitemap.xml` at repo root. Bump `<lastmod>` in `sitemap.xml` when page content changes meaningfully, and add any new page to it.
+- Indexing itself depends on Google Search Console (property `uppowerwash.be`, sitemap submitted there) — code changes alone don't get the site indexed.
+
 ## Mascot
 `assets/mascotte-*.png` are cropped/cutout from art the client supplied (a 4x3 sprite sheet for `mascotte-schild`/`mascotte-piepen`; `mascotte-hogedruk` was re-cropped from a separate, less-tightly-cropped source photo of the same pose so more of the water spray is visible), background made transparent. Currently used: `mascotte-hogedruk` (hero, positioned left of the text via `order: -1` on desktop so the spray points toward it; stacks below the text again on mobile), `mascotte-schild` (waarom section), `mascotte-piepen` (footer, decorative/`aria-hidden`).
 
