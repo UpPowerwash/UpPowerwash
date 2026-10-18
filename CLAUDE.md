@@ -1,6 +1,6 @@
 # UpPowerwash website
 
-Single-page static marketing site for "Under Pressure Power Washing" (pressure washing service, Limburg, Belgium). Dutch-language content.
+Single-page static marketing site for "Under Pressure Power Wash" (pressure washing service, Limburg, Belgium). Dutch-language content.
 
 ## Stack
 - Plain static HTML/CSS/JS — no framework, no build step, no package.json
@@ -39,7 +39,7 @@ Hosted on **GitHub Pages**, free because this repo is public (private repos need
 Stays working as long as: the repo stays public, the Combell domain registration keeps getting renewed, and nobody changes the DNS records above. No recurring cost beyond the yearly domain renewal at Combell.
 
 ## SEO
-- People search for the brand as "UpPowerwash" (domain, email, Instagram `@up.powerwash`), but the visible business name is "Under Pressure Power Washing" — so `<title>`, meta description, footer and the JSON-LD `alternateName` all carry "UpPowerwash" too. Keep both names in sync if either changes.
+- People search for the brand as "UpPowerwash" (domain, email, Instagram `@up.powerwash`), but the visible business name is "Under Pressure Power Wash" — so `<title>`, meta description, footer and the JSON-LD `alternateName` all carry "UpPowerwash" too. Keep both names in sync if either changes.
 - `<head>` of `index.html` has a canonical URL, Open Graph tags (preview image = `project-voor-na-1.jpg`) and a `LocalBusiness` JSON-LD block (phone, email, area served, Instagram). No street address on purpose — it's a service-area business; only add one if the owner wants it public.
 - `robots.txt` + `sitemap.xml` at repo root. Bump `<lastmod>` in `sitemap.xml` when page content changes meaningfully, and add any new page to it.
 - Indexing itself depends on Google Search Console (property `uppowerwash.be`, sitemap submitted there) — code changes alone don't get the site indexed.
