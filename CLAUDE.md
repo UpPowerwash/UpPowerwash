@@ -5,6 +5,7 @@ Single-page static marketing site for "Under Pressure Power Wash" (pressure wash
 ## Stack
 - Plain static HTML/CSS/JS — no framework, no build step, no package.json
 - `index.html` (main page), `privacy.html` (privacy policy)
+- Service pages for local SEO: `oprit-reinigen.html`, `terras-reinigen.html`, `gevel-reinigen.html` (see "Service pages" below)
 - `css/styles.css`, `js/main.js`
 - `assets/` — logo, favicon, mascot cutouts (`mascotte-*.png`, transparent background), project photo (`project-voor-na-1.jpg`)
 - Google Fonts (Poppins) loaded via CDN link in `<head>`
@@ -43,6 +44,9 @@ Stays working as long as: the repo stays public, the Combell domain registration
 - `<head>` of `index.html` has a canonical URL, Open Graph tags (preview image = `project-voor-na-1.jpg`) and a `LocalBusiness` JSON-LD block (phone, email, area served, Instagram). No street address on purpose — it's a service-area business; only add one if the owner wants it public.
 - `robots.txt` + `sitemap.xml` at repo root. Bump `<lastmod>` in `sitemap.xml` when page content changes meaningfully, and add any new page to it.
 - Indexing itself depends on Google Search Console (property `uppowerwash.be`, sitemap submitted there) — code changes alone don't get the site indexed.
+
+## Service pages
+`oprit-reinigen.html`, `terras-reinigen.html`, `gevel-reinigen.html` — one page per service, each targeting "<dienst> reinigen in Limburg". Same header/footer/contact form as `index.html` (so `js/main.js` works unchanged), plus: breadcrumb in the hero, `.service-detail` text block (`.has-photo` variant = two columns with a photo, only the oprit page has a real photo so far), `#werkwijze` steps, `.faq` (`<details>`), `.related-services` cross-links. Each has its own `<title>`/description/canonical and a `Service` + `BreadcrumbList` JSON-LD `@graph`. The form's `_subject` names the service so incoming emails show which page they came from. Linked from the homepage service cards (`.service-link`) and the footer of every page. Copy deliberately makes no claims about prices, products or experience the business hasn't confirmed — keep it that way. When adding a service page: copy one of these, update all meta/JSON-LD URLs, add it to `sitemap.xml`, the footer links on all pages and the `.related-links` on the other service pages.
 
 ## Mascot
 `assets/mascotte-*.png` are cropped/cutout from art the client supplied (a 4x3 sprite sheet for `mascotte-schild`/`mascotte-piepen`; `mascotte-hogedruk` was re-cropped from a separate, less-tightly-cropped source photo of the same pose so more of the water spray is visible), background made transparent. Currently used: `mascotte-hogedruk` (hero, positioned left of the text via `order: -1` on desktop so the spray points toward it; stacks below the text again on mobile), `mascotte-schild` (waarom section), `mascotte-piepen` (footer, decorative/`aria-hidden`).
