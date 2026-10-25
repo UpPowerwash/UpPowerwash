@@ -7,7 +7,7 @@ Single-page static marketing site for "Under Pressure Power Wash" (pressure wash
 - `index.html` (main page), `privacy.html` (privacy policy)
 - Service pages for local SEO: `oprit-reinigen.html`, `terras-reinigen.html`, `gevel-reinigen.html` (see "Service pages" below)
 - `css/styles.css`, `js/main.js`
-- `assets/` — logo, favicon, mascot cutouts (`mascotte-*.png`, transparent background), project photo (`project-voor-na-1.jpg`)
+- `assets/` — logo, favicon, mascot cutouts (`mascotte-*.png`, transparent background), before/after photos (`project-voor-na-1.jpg` oprit, `project-voor-na-2.jpg` terras — 900x1125 split image, VOOR/NA labels)
 - Google Fonts (Poppins) loaded via CDN link in `<head>`
 - `CNAME` at repo root — GitHub Pages custom domain (`uppowerwash.be`), DNS managed at Combell
 
@@ -22,7 +22,7 @@ Three independent init functions wired on `DOMContentLoaded`:
 
 ## Known placeholders (not yet filled in with real data)
 - "Reviews" section was removed (was showing made-up example quotes, which isn't something to publish as real). CSS for it (`#reviews`, `.reviews-grid`, `.review-card`) is still in `css/styles.css` for reuse — re-add the `<section id="reviews">` block once there are genuine client reviews to show.
-- "Voor & Na" has one real photo (`assets/project-voor-na-1.jpg`); more can be added the same way (`.project-photo` inside `.before-after-grid`)
+- "Voor & Na" has two photos (`project-voor-na-1.jpg` oprit, `project-voor-na-2.jpg` terras, the latter also on `terras-reinigen.html`); more can be added the same way (`.project-photo` inside `.before-after-grid`, which fits up to three per row)
 
 Real contact info in place: phone/WhatsApp `+32 456 94 17 81`, email `info@uppowerwash.be`.
 
@@ -46,7 +46,7 @@ Stays working as long as: the repo stays public, the Combell domain registration
 - Indexing itself depends on Google Search Console (property `uppowerwash.be`, sitemap submitted there) — code changes alone don't get the site indexed.
 
 ## Service pages
-`oprit-reinigen.html`, `terras-reinigen.html`, `gevel-reinigen.html` — one page per service, each targeting "<dienst> reinigen in Limburg". Same header/footer/contact form as `index.html` (so `js/main.js` works unchanged), plus: breadcrumb in the hero, `.service-detail` text block (`.has-photo` variant = two columns with a photo, only the oprit page has a real photo so far), `#werkwijze` steps, `.faq` (`<details>`), `.related-services` cross-links. Each has its own `<title>`/description/canonical and a `Service` + `BreadcrumbList` JSON-LD `@graph`. The form's `_subject` names the service so incoming emails show which page they came from. Linked from the homepage service cards (`.service-link`) and the footer of every page. Copy deliberately makes no claims about prices, products or experience the business hasn't confirmed — keep it that way. When adding a service page: copy one of these, update all meta/JSON-LD URLs, add it to `sitemap.xml`, the footer links on all pages and the `.related-links` on the other service pages.
+`oprit-reinigen.html`, `terras-reinigen.html`, `gevel-reinigen.html` — one page per service, each targeting "<dienst> reinigen in Limburg". Same header/footer/contact form as `index.html` (so `js/main.js` works unchanged), plus: breadcrumb in the hero, `.service-detail` text block (`.has-photo` variant = two columns with a photo, oprit and terras pages have a photo, gevel not yet), `#werkwijze` steps, `.faq` (`<details>`), `.related-services` cross-links. Each has its own `<title>`/description/canonical and a `Service` + `BreadcrumbList` JSON-LD `@graph`. The form's `_subject` names the service so incoming emails show which page they came from. Linked from the homepage service cards (`.service-link`) and the footer of every page. Copy deliberately makes no claims about prices, products or experience the business hasn't confirmed — keep it that way. When adding a service page: copy one of these, update all meta/JSON-LD URLs, add it to `sitemap.xml`, the footer links on all pages and the `.related-links` on the other service pages.
 
 ## Mascot
 `assets/mascotte-*.png` are cropped/cutout from art the client supplied (a 4x3 sprite sheet for `mascotte-schild`/`mascotte-piepen`; `mascotte-hogedruk` was re-cropped from a separate, less-tightly-cropped source photo of the same pose so more of the water spray is visible), background made transparent. Currently used: `mascotte-hogedruk` (hero, positioned left of the text via `order: -1` on desktop so the spray points toward it; stacks below the text again on mobile), `mascotte-schild` (waarom section), `mascotte-piepen` (footer, decorative/`aria-hidden`).
