@@ -18,7 +18,7 @@ Single-page static marketing site for "Under Pressure Powerwash" (pressure washi
 Three independent init functions wired on `DOMContentLoaded`:
 - `initMobileNav` — hamburger menu toggle
 - `initSmoothScroll` — smooth-scroll for in-page anchor links
-- `initContactForm` — submits the contact form via `fetch` to a FormSubmit.co endpoint, shows inline success/error status
+- `initContactForm` — the price-request form: shows the company-name field for "Bedrijf of VME", validates (at least one service, 4-digit postcode, email), joins the `dienst`/`extra` checkboxes into one `diensten`/`extra` field each (FormSubmit would otherwise keep separate same-named fields), scales up to 3 photos down to max 1600px JPEG (`resizePhoto`, FormSubmit allows 10 MB of attachments in total) and appends them as `foto1..3`, then submits via `fetch` and shows inline status
 
 ## Known placeholders (not yet filled in with real data)
 - "Reviews" section was removed (was showing made-up example quotes, which isn't something to publish as real). CSS for it (`#reviews`, `.reviews-grid`, `.review-card`) is still in `css/styles.css` for reuse — re-add the `<section id="reviews">` block once there are genuine client reviews to show.
@@ -27,6 +27,8 @@ Three independent init functions wired on `DOMContentLoaded`:
 Real contact info in place: phone/WhatsApp `+32 456 94 17 81`, email `info@uppowerwash.be`.
 
 ## Contact form
+The form is a 3-step price request (what/how big/surface type → how dirty/extras/photos → contact details), identical on all four pages; service pages pre-check their own service (`checked` on that `dienst` checkbox) and name it in `_subject`. When changing the form, change it on all four pages. The photo `<input type="file">` deliberately has no `name`: JS adds the resized copies instead of the originals. Keep the options to services the business actually offers (no coating/impregnation claims).
+
 `action="https://formsubmit.co/info@uppowerwash.be"` — no account/API key needed, FormSubmit forwards submissions by email. Requires a one-time activation click in a confirmation email FormSubmit sends to that inbox after the first-ever submission; until activated, submissions may not be delivered even though the client-side `fetch` gets a 200. A hidden `_honeypot` field is spam protection; `_subject`/`_template` set the forwarded email's subject and layout.
 
 ## Hosting & domain

@@ -152,7 +152,7 @@
 
     <section id="contact">
       <h2>Vraag een offerte aan</h2>
-      <p class="section-note">Vul het formulier in of neem rechtstreeks contact op. We antwoorden zo snel mogelijk.</p>
+      <p class="section-note">Hoe meer je invult, hoe sneller we je een juiste prijs kunnen geven. Een paar foto's helpen enorm. Liever meteen praten? Stuur ons een WhatsApp of bel ons.</p>
       <div class="contact-layout">
         <div class="contact-direct">
           <a class="btn btn-primary" href="https://wa.me/32456941781" target="_blank" rel="noopener">WhatsApp: +32 456 94 17 81</a>
@@ -160,27 +160,106 @@
           <a class="btn btn-primary" href="mailto:info@uppowerwash.be">info@uppowerwash.be</a>
           <p style="margin-top: 8px; color: #555;">Actief in heel Limburg.</p>
         </div>
-        <form id="contact-form" action="https://formsubmit.co/info@uppowerwash.be" method="POST">
-          <input type="hidden" name="_subject" value="Nieuwe offerteaanvraag via de website">
+        <form id="contact-form" action="https://formsubmit.co/info@uppowerwash.be" method="POST" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="_subject" value="Nieuwe prijsaanvraag via de website">
           <input type="hidden" name="_template" value="table">
           <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
-          <div>
-            <label for="naam">Naam</label>
-            <input type="text" id="naam" name="naam" required>
-          </div>
-          <div>
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div>
-            <label for="telefoon">Telefoon</label>
-            <input type="tel" id="telefoon" name="telefoon">
-          </div>
-          <div>
-            <label for="bericht">Bericht</label>
-            <textarea id="bericht" name="bericht" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Verstuur aanvraag</button>
+
+          <fieldset class="form-step">
+            <legend><span class="step-nr">1</span> Wat mogen we reinigen?</legend>
+            <div class="choice-grid" id="dienst-keuze">
+              <label class="choice"><input type="checkbox" name="dienst" value="Oprit"> Oprit</label>
+              <label class="choice"><input type="checkbox" name="dienst" value="Terras"> Terras</label>
+              <label class="choice"><input type="checkbox" name="dienst" value="Gevel"> Gevel</label>
+              <label class="choice"><input type="checkbox" name="dienst" value="Parking of bedrijfsterrein"> Parking of bedrijfsterrein</label>
+              <label class="choice"><input type="checkbox" name="dienst" value="Iets anders"> Iets anders</label>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="oppervlakte">Oppervlakte (ongeveer, in m²)</label>
+                <input type="number" id="oppervlakte" name="oppervlakte_m2" min="1" max="100000" inputmode="numeric" placeholder="bv. 60">
+                <p class="field-hint">Weet je het niet? Laat leeg, dan meten wij het op.</p>
+              </div>
+              <div>
+                <label for="ondergrond">Soort ondergrond</label>
+                <select id="ondergrond" name="ondergrond">
+                  <option value="Weet ik niet">Weet ik niet</option>
+                  <option value="Betonklinkers">Betonklinkers</option>
+                  <option value="Gebakken klinkers of baksteen">Gebakken klinkers of baksteen</option>
+                  <option value="Keramische tegels">Keramische tegels</option>
+                  <option value="Natuursteen (bv. blauwe hardsteen)">Natuursteen (bv. blauwe hardsteen)</option>
+                  <option value="Betonplaten of beton">Betonplaten of beton</option>
+                  <option value="Asfalt">Asfalt</option>
+                  <option value="Gevelsteen of crepi">Gevelsteen of crepi</option>
+                  <option value="Iets anders">Iets anders</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-step">
+            <legend><span class="step-nr">2</span> Hoe vuil is het?</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="vervuiling" value="Licht: groene aanslag"> Licht <span class="choice-sub">groene aanslag</span></label>
+              <label class="choice"><input type="radio" name="vervuiling" value="Gemiddeld: mos in de voegen"> Gemiddeld <span class="choice-sub">mos in de voegen</span></label>
+              <label class="choice"><input type="radio" name="vervuiling" value="Zwaar: dik mos, zwarte vlekken"> Zwaar <span class="choice-sub">dik mos, zwarte vlekken</span></label>
+              <label class="choice"><input type="radio" name="vervuiling" value="Weet ik niet" checked> Weet ik niet</label>
+            </div>
+            <p class="field-label">Wil je er ook dit bij?</p>
+            <div class="choice-grid">
+              <label class="choice"><input type="checkbox" name="extra" value="Onkruid verwijderen"> Onkruid verwijderen</label>
+              <label class="choice"><input type="checkbox" name="extra" value="Voegen opnieuw invullen"> Voegen opnieuw invullen <span class="choice-sub">met zand of polymeerzand</span></label>
+            </div>
+            <div>
+              <label for="fotos">Foto's (optioneel, max. 3)</label>
+              <input type="file" id="fotos" accept="image/*" multiple>
+              <p class="field-hint">Een overzichtsfoto en een close-up van het vuil zijn ideaal.</p>
+              <p class="field-hint" id="fotos-status" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-step">
+            <legend><span class="step-nr">3</span> Jouw gegevens</legend>
+            <div class="choice-grid choice-grid-2">
+              <label class="choice"><input type="radio" name="klanttype" value="Particulier" checked> Particulier</label>
+              <label class="choice"><input type="radio" name="klanttype" value="Bedrijf of VME"> Bedrijf of VME</label>
+            </div>
+            <div id="bedrijf-veld" hidden>
+              <label for="bedrijfsnaam">Bedrijfsnaam</label>
+              <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" autocomplete="organization">
+            </div>
+            <div>
+              <label for="naam">Naam *</label>
+              <input type="text" id="naam" name="naam" required autocomplete="name">
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="postcode">Postcode *</label>
+                <input type="text" id="postcode" name="postcode" required inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="postal-code" placeholder="bv. 3550">
+              </div>
+              <div>
+                <label for="gemeente">Gemeente</label>
+                <input type="text" id="gemeente" name="gemeente" autocomplete="address-level2">
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div>
+                <label for="telefoon">Telefoon</label>
+                <input type="tel" id="telefoon" name="telefoon" autocomplete="tel">
+              </div>
+            </div>
+            <div>
+              <label for="bericht">Nog iets dat we moeten weten?</label>
+              <textarea id="bericht" name="bericht" placeholder="bv. gewenste periode, moeilijke bereikbaarheid, gevoelige planten"></textarea>
+            </div>
+          </fieldset>
+
+          <p class="field-hint">Velden met * zijn verplicht. We gebruiken je gegevens alleen om je aanvraag te beantwoorden (<a href="privacy.html">privacybeleid</a>).</p>
+          <button type="submit" class="btn btn-primary">Vraag mijn prijs aan</button>
           <div id="form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
