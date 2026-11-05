@@ -71,3 +71,4 @@ Every mascot eye has a tiny (~5-8px) white highlight dot inside the black pupil 
 ## Dashboard (private UP Dashboard, repo C:\Users\jorri\UpDashboard)
 - Every page has the Cloudflare Web Analytics beacon just before `</body>` (cookieless, token `c9d551eb...`). Add it to any new page too, otherwise its visits are not counted. The token is public by design.
 - `privacy.html` mentions Web Analytics; keep that paragraph in sync if tracking changes.
+- `js/main.js` `sendLeadCopy()` posts a copy of each successful quote request (services, extras, postcode, particulier/bedrijf, page path; never name/e-mail/phone) to `https://up-collector.up-dashboard.workers.dev/lead`. Fire-and-forget, never blocks the FormSubmit flow. Bump `js/main.js?v=N` on the four pages when main.js changes (current v=2).

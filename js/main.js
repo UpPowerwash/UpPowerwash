@@ -56,6 +56,28 @@ function resizePhoto(file) {
   });
 }
 
+// Copy of the request (without name/e-mail/phone) for the private UP dashboard. Never blocks the form.
+const LEAD_URL = 'https://up-collector.up-dashboard.workers.dev/lead';
+
+function sendLeadCopy(form, services, extras) {
+  try {
+    const kind = form.querySelector('input[name="klanttype"]:checked')?.value === 'Particulier' ? 'particulier' : 'bedrijf';
+    fetch(LEAD_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        page: location.pathname,
+        services: services.join(', '),
+        extras: extras.join(', '),
+        postcode: form.querySelector('#postcode')?.value || '',
+        kind,
+        _honeypot: form.querySelector('input[name="_honeypot"]')?.value || '',
+      }),
+    }).catch(() => {});
+  } catch (e) { /* the dashboard copy is optional */ }
+}
+
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
@@ -126,6 +148,7 @@ function initContactForm() {
       if (response.ok) {
         status.textContent = 'Bedankt! We bekijken je aanvraag en sturen je zo snel mogelijk een prijs.';
         status.className = 'success';
+        sendLeadCopy(form, services, extras);
         form.reset();
         companyField.hidden = true;
         if (photoStatus) photoStatus.textContent = '';
