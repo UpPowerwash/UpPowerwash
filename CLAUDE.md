@@ -24,7 +24,7 @@ Three independent init functions wired on `DOMContentLoaded`:
 - "Reviews" section was removed (was showing made-up example quotes, which isn't something to publish as real). CSS for it (`#reviews`, `.reviews-grid`, `.review-card`) is still in `css/styles.css` for reuse — re-add the `<section id="reviews">` block once there are genuine client reviews to show.
 - "Voor & Na" has two photos (`project-voor-na-1.jpg` oprit, `project-voor-na-2.jpg` terras, the latter also on `terras-reinigen.html`); more can be added the same way (`.project-photo` inside `.before-after-grid`, which fits up to three per row)
 
-Real contact info in place: phone/WhatsApp `+32 456 94 17 81`, email `info@uppowerwash.be`.
+Real contact info in place: phone/WhatsApp `+32 456 94 17 81`, email `info@uppowerwash.be`. Socials in the footer of all four pages and in the index JSON-LD `sameAs`: Instagram `@up.powerwash` and Facebook page `https://www.facebook.com/profile.php?id=61595994253226` (no vanity URL yet; update everywhere if the page gets a username).
 
 ## Contact form
 The form is a 3-step price request (what/how big/surface type → how dirty/extras/photos → contact details), identical on all four pages; service pages pre-check their own service (`checked` on that `dienst` checkbox) and name it in `_subject`. When changing the form, change it on all four pages. The photo `<input type="file">` deliberately has no `name`: JS adds the resized copies instead of the originals. Keep the options to services the business actually offers (no coating/impregnation claims).
