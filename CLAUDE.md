@@ -67,3 +67,7 @@ Every mascot eye has a tiny (~5-8px) white highlight dot inside the black pupil 
 - All visible copy is Dutch
 - No JS framework/build tooling — edits to `js/main.js`/`css/styles.css` take effect directly on page load
 - Icons are inline SVG with `stroke="currentColor"` (see `.icon` elements), not Unicode symbol characters — a Unicode glyph like `&#9776;` (the old `#nav-toggle` hamburger icon) can get rendered by an emoji/symbol font on some mobile devices, ignoring the CSS `color` entirely. SVG always respects `currentColor`.
+
+## Dashboard (private UP Dashboard, repo C:\Users\jorri\UpDashboard)
+- Every page has the Cloudflare Web Analytics beacon just before `</body>` (cookieless, token `c9d551eb...`). Add it to any new page too, otherwise its visits are not counted. The token is public by design.
+- `privacy.html` mentions Web Analytics; keep that paragraph in sync if tracking changes.
