@@ -68,6 +68,10 @@ Every mascot eye has a tiny (~5-8px) white highlight dot inside the black pupil 
 - Before/after photos are served as WebP via `<picture>` (`project-voor-na-N.webp`, quality 68) with the JPG as fallback; OG image stays the JPG. When adding a photo, make both and keep `width`/`height` on the `<img>` (avoids layout shift).
 - Every `<img>` has `width`/`height`; CSS keeps `height: auto`.
 - `404.html` at the root (GitHub Pages serves it for unknown URLs) uses absolute paths (`/assets/...`, `/css/...`) and `noindex`.
+- Floating WhatsApp button (`.whatsapp-float`, before the main.js script on the four main pages): pill with text on desktop, round icon on phones, links to wa.me with a prefilled Dutch message.
+- Service pages carry a `FAQPage` in their JSON-LD `@graph`, generated from the visible `<details>` FAQ. **When you change a FAQ question or answer, update the JSON-LD too** (Google requires them to match).
+- Both Google Fonts hosts are preconnected (`fonts.googleapis.com` and `fonts.gstatic.com` crossorigin).
+- `css/styles.css?v=N` is cache-busted on all pages (current v=2). Bump it when the CSS changes; GitHub Pages caches it for 10 minutes and browsers may keep it longer.
 - Footer socials: Instagram, Facebook, TikTok (`https://www.tiktok.com/@uppowerwash`), also in the index JSON-LD `sameAs`.
 
 ## Conventions

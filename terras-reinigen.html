@@ -24,7 +24,10 @@
         "serviceType": "Hogedrukreiniging van terrassen",
         "description": "Reiniging van terrassen: mos, algen en vuil verwijderen voor een proper en veilig terras.",
         "url": "https://uppowerwash.be/terras-reinigen.html",
-        "areaServed": { "@type": "AdministrativeArea", "name": "Limburg, België" },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Limburg, België"
+        },
         "provider": {
           "@type": "LocalBusiness",
           "name": "Under Pressure Powerwash",
@@ -37,16 +40,64 @@
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://uppowerwash.be/" },
-          { "@type": "ListItem", "position": 2, "name": "Terras reinigen", "item": "https://uppowerwash.be/terras-reinigen.html" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://uppowerwash.be/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Terras reinigen",
+            "item": "https://uppowerwash.be/terras-reinigen.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wanneer laat je een terras best reinigen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Veel mensen laten hun terras reinigen in de lente, zodat het klaar is voor de zomer. Maar ook na de zomer of voor de winter is een goed moment, zeker als het terras glad wordt door mos en algen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kan elk type terras met hogedruk gereinigd worden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De meeste terrassen wel, maar niet elk materiaal verdraagt dezelfde druk. Daarom bekijken we je terras eerst bij het plaatsbezoek en passen we de aanpak aan het materiaal aan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Moet ik iets voorbereiden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Het helpt als het terras vrij is van tuinmeubels, bloempotten en andere losse spullen. Zo kunnen we het hele oppervlak in één keer reinigen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wat kost het reinigen van een terras?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De prijs hangt af van de oppervlakte, het materiaal en hoe vervuild het terras is. Na het gratis plaatsbezoek krijg je een duidelijke offerte zonder verborgen kosten."
+            }
+          }
         ]
       }
     ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
   <header class="site-header">
@@ -277,6 +328,10 @@
     </p>
   </footer>
 
+  <a class="whatsapp-float" href="https://wa.me/32456941781?text=Hallo%20UP%2C%20ik%20heb%20een%20vraag%20over%20een%20reiniging." target="_blank" rel="noopener" aria-label="Stuur ons een WhatsApp-bericht">
+    <svg class="icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 9.5c.3 1.9 2.6 4.2 4.5 4.5l1.2-1.2 1.8.9-.4 1.6c-3.4.4-7.3-3.5-6.9-6.9l1.6-.4.9 1.8z"/></svg>
+    <span>WhatsApp</span>
+  </a>
   <script src="js/main.js?v=2"></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c9d551eb4a704d3897691bb4f375aa56"}'></script>
 </body>

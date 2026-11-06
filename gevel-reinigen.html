@@ -24,7 +24,10 @@
         "serviceType": "Gevelreiniging",
         "description": "Reiniging van gevels: groene aanslag en vuil verwijderen voor een frisse uitstraling.",
         "url": "https://uppowerwash.be/gevel-reinigen.html",
-        "areaServed": { "@type": "AdministrativeArea", "name": "Limburg, België" },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Limburg, België"
+        },
         "provider": {
           "@type": "LocalBusiness",
           "name": "Under Pressure Powerwash",
@@ -37,16 +40,64 @@
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://uppowerwash.be/" },
-          { "@type": "ListItem", "position": 2, "name": "Gevel reinigen", "item": "https://uppowerwash.be/gevel-reinigen.html" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://uppowerwash.be/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Gevel reinigen",
+            "item": "https://uppowerwash.be/gevel-reinigen.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is hogedruk niet te zwaar voor een gevel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Daarom bekijken we je gevel altijd eerst. We kiezen de druk en werkwijze op basis van het materiaal en de staat van de gevel, zodat het vuil verdwijnt zonder de stenen of voegen te beschadigen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hoe weet ik of mijn gevel een reiniging nodig heeft?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Groene of zwarte plekken, vuile strepen onder de vensterbanken of een gevel die doffer is dan vroeger: dat zijn allemaal tekenen dat een reiniging je woning weer een frissere uitstraling geeft."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Moet ik iets voorbereiden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zorg dat ramen en deuren dicht zijn en dat er geen losse spullen tegen de gevel staan. Alle praktische afspraken maken we vooraf bij het plaatsbezoek."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wat kost het reinigen van een gevel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "De prijs hangt af van de oppervlakte, de hoogte, het materiaal en hoe vervuild de gevel is. Na het gratis plaatsbezoek krijg je een duidelijke offerte zonder verborgen kosten."
+            }
+          }
         ]
       }
     ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
   <header class="site-header">
@@ -272,6 +323,10 @@
     </p>
   </footer>
 
+  <a class="whatsapp-float" href="https://wa.me/32456941781?text=Hallo%20UP%2C%20ik%20heb%20een%20vraag%20over%20een%20reiniging." target="_blank" rel="noopener" aria-label="Stuur ons een WhatsApp-bericht">
+    <svg class="icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 9.5c.3 1.9 2.6 4.2 4.5 4.5l1.2-1.2 1.8.9-.4 1.6c-3.4.4-7.3-3.5-6.9-6.9l1.6-.4.9 1.8z"/></svg>
+    <span>WhatsApp</span>
+  </a>
   <script src="js/main.js?v=2"></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c9d551eb4a704d3897691bb4f375aa56"}'></script>
 </body>
