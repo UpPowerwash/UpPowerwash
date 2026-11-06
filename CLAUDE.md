@@ -63,6 +63,13 @@ The shield itself is `rgb(196, 201, 207)` (a light steel silver), not pure white
 
 Every mascot eye has a tiny (~5-8px) white highlight dot inside the black pupil — that's original art style, not a bug, and it's present on all three poses.
 
+## Performance & images (2026-11-06)
+- Header/footer logo uses `assets/logo-96.png` (96px, ~8 KB) with `width/height` attributes; `assets/logo.png` (794px) stays only for JSON-LD/large uses.
+- Before/after photos are served as WebP via `<picture>` (`project-voor-na-N.webp`, quality 68) with the JPG as fallback; OG image stays the JPG. When adding a photo, make both and keep `width`/`height` on the `<img>` (avoids layout shift).
+- Every `<img>` has `width`/`height`; CSS keeps `height: auto`.
+- `404.html` at the root (GitHub Pages serves it for unknown URLs) uses absolute paths (`/assets/...`, `/css/...`) and `noindex`.
+- Footer socials: Instagram, Facebook, TikTok (`https://www.tiktok.com/@uppowerwash`), also in the index JSON-LD `sameAs`.
+
 ## Conventions
 - All visible copy is Dutch
 - No JS framework/build tooling — edits to `js/main.js`/`css/styles.css` take effect directly on page load
