@@ -4,7 +4,7 @@ Single-page static marketing site for "Under Pressure Powerwash" (pressure washi
 
 ## Stack
 - Plain static HTML/CSS/JS — no framework, no build step, no package.json
-- `index.html` (main page), `privacy.html` (privacy policy)
+- `index.html` (main page), `privacy.html` (privacy policy), `voorwaarden.html` (gebruiksvoorwaarden for the site and the social-media links; required by the TikTok developer app — no sales terms/prices there, those belong in the offerte)
 - Service pages for local SEO: `oprit-reinigen.html`, `terras-reinigen.html`, `gevel-reinigen.html` (see "Service pages" below)
 - `css/styles.css`, `js/main.js`
 - `assets/` — logo, favicon, mascot cutouts (`mascotte-*.png`, transparent background), before/after photos (`project-voor-na-1.jpg` oprit, `project-voor-na-2.jpg` terras — 900x1125 split image, VOOR/NA labels)
